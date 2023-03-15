@@ -30,7 +30,7 @@ class GuestLeadController extends Controller
         }
 
         $newContact = new GuestLead();
-        $newContact->fill($newContact);
+        $newContact->fill($form_data);
 
         $newContact->save();
 
