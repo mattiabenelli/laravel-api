@@ -1,7 +1,9 @@
 <h1>Richiesta contatto</h1>
 <p>
     Richiesta contatto: <br>
-    Titolo: {{ $lead->title }}
-    Slug: {{ $lead->slug }}
+    Nome: {{ $lead->name }}
+    cognome: {{ $lead->surname }}
+    Numero: {{ $lead->phone }}
+    email: {{ $lead->email }}
     Contenuto: {{ $lead->message }}
 </p>

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\GuestLead;
+use App\Mail\GuestContact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-
-use App\Models\GuestLead;
 
 class GuestLeadController extends Controller
 {
@@ -34,7 +35,7 @@ class GuestLeadController extends Controller
 
         $newContact->save();
 
-        Mail::to('info@boolpress.com')->send(GuestContact($newContact));
+        Mail::to('info@boolpress.com')->send(new GuestContact($newContact));
 
         return response()->json([
             'success' => true,
